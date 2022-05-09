@@ -1,0 +1,53 @@
+.moviestar-pagination-container {
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.moviestar-pagination-box {
+    width: 18rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.moviestar-pagination-box form {
+    width: 100%;
+    display: flex;
+}
+
+.moviestar-pagination-button {
+    width: 4rem;
+    height: 4rem;
+    border-radius: .4rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+}
+
+.moviestar-pagination-button svg {
+    filter: brightness(0) saturate(100%) invert(26%) sepia(0%) saturate(7395%) hue-rotate(234deg) brightness(89%) contrast(92%);
+}
+
+.moviestar-pagination-button:disabled {
+    border: 1px solid #c2c2c2;
+    cursor: unset;
+}
+
+.moviestar-pagination-button:disabled svg {
+    filter: none;
+}
+
+.moviestar-pagination-container p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.moviestar-flip-horizontal {
+    transform: rotate(180deg);
+}
