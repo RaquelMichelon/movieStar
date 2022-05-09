@@ -7,7 +7,7 @@ function Navbar() {
           <nav className="container">
               <div className="moviestar-nav-content">
                   <h1>MovieSTAR</h1>
-                  <a href="https://github.com/RaquelMichelon" target="_blank" rel="noreferrer">
+                  <a href="https://github.com/RaquelMichelon/movieStar" target="_blank" rel="noreferrer">
                       <div className="moviestar-contact-container">
                           <GithubIcon />
                           <p className="moviestar-contact-link">/RaquelMichelon</p>
