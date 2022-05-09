@@ -1,4 +1,5 @@
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 function Form() {
   const movie = {
@@ -40,7 +41,9 @@ function Form() {
             </button>
           </div>
         </form>
-        <button className="btn btn-primary moviestar-btn mt-3">Cancel</button>
+        <Link to="/">
+          <button className="btn btn-primary moviestar-btn mt-3">Cancel</button>
+        </Link>
       </div>
     </div>
   );
