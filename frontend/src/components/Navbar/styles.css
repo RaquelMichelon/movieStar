@@ -1,0 +1,31 @@
+header {
+    display: flex;
+    align-items: center;
+
+    background-color: var(--primary-color);
+    height: 6rem;
+}
+
+.moviestar-nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: white;
+}
+
+.moviestar-nav-content h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 2.4rem;
+}
+
+.moviestar-contact-container {
+    display: flex;
+    align-items: center;
+}
+
+.moviestar-contact-link {
+    margin: 0 0 0 1rem;
+    font-size: 1.2rem;
+}
