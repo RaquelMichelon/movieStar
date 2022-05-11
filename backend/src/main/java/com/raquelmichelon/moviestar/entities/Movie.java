@@ -1,9 +1,13 @@
 package com.raquelmichelon.moviestar.entities;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +21,10 @@ public class Movie {
 	private Double score;
 	private Integer count;
 	private String image;
+	
+	//Set para garantir que nao sejam dados repetidos
+	@OneToMany(mappedBy = "id.movie") //id.movie = id eh a chave do score e dentro do scorePk o nome do atributo eh movie
+	private Set<Score> scores = new HashSet<>();
 	
 	public Movie() {}
 
@@ -67,8 +75,11 @@ public class Movie {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	
-	
+
+	public Set<Score> getScores() {
+		return scores;
+	}
+
 	
 
 }
