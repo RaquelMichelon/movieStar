@@ -15,6 +15,10 @@ MovieStar is a FullStack project built with:
 
 Comming Soon...
 
+## DataBase Model
+
+![](conceptModel.png)
+
 ## Acknowledgment
 
 [Spring React Week | DevSuperior](https://devsuperior.com.br/)
