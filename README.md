@@ -13,11 +13,11 @@ MovieStar is a FullStack project built with:
 
 ## Layout
 
-Comming Soon...
+![](layout.png)
 
 ## DataBase Model
 
-![](conceptModel.png)
+![](ConceptModel.png)
 
 ## Acknowledgment
 
