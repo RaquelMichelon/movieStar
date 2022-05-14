@@ -1,13 +1,15 @@
-import axios from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Movie } from "types/movie";
 import { BASE_URL } from "utils/requests";
+import { validateEmail } from "utils/validate";
 import "./styles.css";
 
 type Props = { movieId: string };
 
 function FormCard({ movieId }: Props) {
+  const navigate = useNavigate();
   const [movie, setMovie] = useState<Movie>();
 
   useEffect(() => {
@@ -15,6 +17,33 @@ function FormCard({ movieId }: Props) {
       setMovie(response.data);
     });
   }, [movieId]);
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const email = (event.target as any).email.value;
+    const score = (event.target as any).score.value;
+
+    // do not send the form if email is invalid
+    if (!validateEmail(email)) {
+      return;
+    }
+
+    // axios request config
+    const config: AxiosRequestConfig = {
+      baseURL: BASE_URL,
+      method: "PUT",
+      url: "/scores",
+      data: {
+        email: email,
+        movieId: movieId,
+        score: score,
+      },
+    };
+
+    axios(config).then((response) => {
+      navigate("/");
+    });
+  };
 
   return (
     <div className="moviestar-form-container">
@@ -25,7 +54,7 @@ function FormCard({ movieId }: Props) {
       />
       <div className="moviestar-card-bottom-container">
         <h3>{movie?.title}</h3>
-        <form className="moviestar-form">
+        <form className="moviestar-form" onSubmit={handleSubmit}>
           <div className="form-group moviestar-form-group">
             <label htmlFor="email">Provide your email</label>
             <input type="email" className="form-control" id="email" />
